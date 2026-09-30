@@ -1,6 +1,18 @@
 # Button Lab
 
+Live demo: [https://fe-aa1-buttons.vercel.app](https://fe-aa1-buttons.vercel.app)
+
 An interactive React + TypeScript lab demonstrating `StatefulButton`, an accessible stateful button component that handles multiple asynchronous states (idle, loading, success, error, disabled) with accessible ARIA live announcements, smooth transitions, and reduced motion support.
+
+## Demo page
+
+The page has a Force success button, a Force error button, and a Disabled toggle, plus random mode (20% failure) when clicking the button directly.
+
+## Approach
+
+- Only transform and opacity animate (colour changes are crossfaded layers, and all labels share one grid cell so the button never resizes).
+- Under `prefers-reduced-motion`, the slides, lift, press, pop and shake are removed but colour, icon and label changes stay and the spinner pulses.
+- Clicks are ignored while loading, and the error state retries on click.
 
 ## Getting Started
 
